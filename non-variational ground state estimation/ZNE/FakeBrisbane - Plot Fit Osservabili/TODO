@@ -1,0 +1,12 @@
+COSE DA FARE::
+
+    1.  Implementare modello d'errore arbitrario su N (piccolo) qubit
+        staccandoci dalle architetture IBM per velocizzare il tutto
+    2.  Rifare tutte le simulazioni per diversi valori di noise strength:
+            - noise level di IBM_Brisbane
+            - noise level di Heron di prima generazione
+            - miglior noise level di un chip IBM
+    3.  Leggere i lavori su PEA, Pauili Noise Twirling, valore ottimo a cui
+        fare PEA, robust shadows estimation.
+    4.  Implementare su questo PEA
+    5.  Valutare se CS possono aiutare o meno

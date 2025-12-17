@@ -1,0 +1,6 @@
+Inizo simulazione circuito con 4 Trotter step.
+Inizio stima valore di aspettazione della 1-potenza dell'Hamiltoniana
+Fold Factor: 1.0
+Fold Factor: 1.5
+Fold Factor: 2.0
+Fold Factor: 2.5

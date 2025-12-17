@@ -1,0 +1,9 @@
+Il codice è corretto. Il problema è proprio concettuale.
+
+In particolare tu devi calcolare i valori di aspettazione di
+
+<\psi| O_i' H O_j |\psi> e di <\psi| O_i' O_j |\psi>
+
+Il problema è che, includendo anche gli operatori di eccitazione, gli operatori O_i' H O_j e O_i' O_j NON è garantito che siano Hermitiani.
+
+In altre parole, gli operatori di eccitazione non commutano con l'Hamiltoniana e dunque NON possiamo usarli nella SbE

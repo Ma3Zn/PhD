@@ -1,0 +1,11 @@
+1.  Investiga esplosione varianza valori di aspettazione [V] 
+    --> Tenevo in memoria ogni exp_val per ogni folding factor.
+        Essendo la media decrescente nei folding factors ci oleva poco 
+        affinchè la varianza diventasse la semplice variazione della media
+        all'aumentare dei folding factors.
+        Ora dovrebbe essere più stabile, ma ho dovuto rilanciare tutte 
+        le simulazioni....
+2.  Cerca nei metadata dell'estimator se questo sputa fuori il numero 
+    di misure eseguite per raggiungere il suo target di precisione
+3.  Implementa Simulaizoni Tensor Network per la simulazione del 
+    processo adiabatico su taglie del sistema maggiori

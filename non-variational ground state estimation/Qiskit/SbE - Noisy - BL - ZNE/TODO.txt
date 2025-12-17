@@ -1,0 +1,8 @@
+Cose da fare:
+    1.  Creare delle funzioni che ti permettano di estimare a diversi folding 
+        factor una specifica Hamiltoniana con un output specifico per 
+        quell'osservabile (prevedere la possibilità di avere differenti 
+        trotter step da eseguire)
+    2.  Capire per quali valori di FF (in funzione dei trotter step) eseguire
+        la ZNE sulle varie osservabili
+    3.  Mettere questi nuovi scrip sull'HPC e lanciare simulazioni opportune
