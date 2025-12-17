@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "debug",
+            "program": "/home/mez/Desktop/Università/Dottorato/Anno_II/CISS/Solver ODE CISS - C/V1/Solver GSL - Tempo Indipendente/solver_ode",
+            "args": [
+                "1008",
+                "./debug/rho.bin",
+                "./debug/Ham.bin",
+                "1",
+                "./debug/b.bin",
+                "./debug/rates.bin",
+                "14",
+                "./debug/oss.bin",
+                "0.05",
+                "5"
+            ],
+            "cwd": "${workspaceFolder}",
+            "request": "launch",
+            "type": "cppdbg"
+        }
+    ]

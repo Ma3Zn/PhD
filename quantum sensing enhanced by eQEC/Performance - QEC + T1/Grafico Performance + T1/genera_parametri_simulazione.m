@@ -1,0 +1,53 @@
+function sim = genera_parametri_simulazione(S, Bx, T1, T2, T_rot)
+%   Funzione che genera i parametri per la simulazione Monte Carlo del
+%   protocollo di sensing
+
+%   Generiamo il sistema fisico di base
+    sim = genera_sistema(S, Bx, T1, T2);
+
+%   Generiamo i superoperatori incoerenti del sistema (T2)
+    sim.sop_inc_completo = calcola_sop_inc_completo(sim);
+
+%   Generiamo i superoperatori incoerenti ridotti del sistema (T2)
+    sim.sop_inc_ridotto = calcola_sop_inc_ridotto(sim);
+
+%   Generiamo i superoperatori incoerenti del sistema (T1)
+    sim.sop_inc_T1_completo = calcola_sop_inc_T1_completo(sim);
+
+%   Generiamo i superoperatori incoerenti ridotti del sistema (T1)
+    sim.sop_inc_T1_ridotto = calcola_sop_inc_T1_ridotto(sim);
+
+%   Stabiliamo la durata delle operazioni di stabilizzazione e recovery
+    sim.durata_op_EC = sim.t_es(sim.dim_q);
+
+%   Stabiliamo la durata della misura (review + 50ns detection fotone)
+    sim.durata_misura = 300;
+
+%   Generiamo il superoperatore di evoluzione per il CU
+    sim.sop_CU = calcola_sop_CU(sim);
+
+%   Generiamo i superoperatori di evoluzione per la recovery
+    sim.sop_R = calcola_sop_R(sim);
+
+%   Generiamo il superoperatore di idle per simulare la lunghezza del
+%   processo di misura
+    sim.sop_idle = calcola_sop_idle(sim);
+
+%   Generiamo il superoperatore del commutatore del generatore della
+%   rotazione logica
+    [sim, sim.sop_comm_rot] = calcola_sop_comm_rot(sim);
+
+%   Settiamo per quanto tempo far evolvere il sistema con una rotazione
+%   logica tramite due applicazioni successive di error correction
+    sim.dt = T_rot;
+
+%   Generiamo il superoperatore di evoluzione per un pezzo della rotazione
+%   logica
+    sim.sop_rot = calcola_sop_rot(sim);
+
+%   Tempo di evoluzione sotto rotazione logica
+    sim.T = 0;
+
+%   Contatore cicli QEC eseguiti
+    sim.it = 0;
+end

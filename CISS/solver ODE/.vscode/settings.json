@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "gsl_complex_math.h": "c",
+        "simulation.h": "c",
+        "p": "c"
+    }
+}

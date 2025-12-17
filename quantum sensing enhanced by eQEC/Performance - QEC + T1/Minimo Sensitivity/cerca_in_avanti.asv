@@ -1,0 +1,31 @@
+function [Bx, sens, T_max] = cerca_in_avanti(S, Bx, sens, step, T2, T_rot, lv_pop, T_max)
+%   Funzione per la ricerca di un intervallo di valori di Bx in cui
+%   eseguire una ricerca dicotomica. Il valore passato di Bx è misurabile
+    
+%   Variabile d'appoggio per il valore della sensitivita'
+    sens_old  = inf;
+
+%   Iniziamo la ricerca dicotomica
+    while(sens < sens_old)
+
+%       Variabili d'appoggio
+        Bx_old = Bx;
+        sens_old = sens;
+        T_max_old = T_max;
+
+%       Settiamo il nuovo campo da testare
+        Bx = (1 - step) * Bx_old;
+
+%       Aggiorniamo il T_max
+        T_max = (1 + step) * T_max_old;
+
+%       Verifichiamo la detectabilità del campo attuale
+        [~, T_mis, sens] = verifica_detectabilita_campo(S, Bx, T2, T_rot, lv_pop, T_max);
+    end
+
+%   Abbiamo superato il minimo ritorniamo il valore opportuno dell-ultimo
+%   campo testato prima del minimo
+    Bx = Bx_old;
+    sens = sens_old;
+    T_max = T_max_old;
+end
